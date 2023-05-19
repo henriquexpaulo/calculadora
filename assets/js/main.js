@@ -5,6 +5,16 @@ function criaCalculador() {
         inicia() {
             this.cliqueBotoes();
             this.pressionaEnter();
+            this.pressioneBackSpace();
+        },
+
+        pressioneBackSpace() {
+            this.display.addEventListener('keydown', e => {
+                if (e.keyCode === 8) {
+                    e.preventDefault();
+                    this.clearDisplay();
+                }
+            });
         },
 
         pressionaEnter() {
